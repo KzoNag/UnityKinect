@@ -1,0 +1,10 @@
+*.suo
+*.csproj
+Assets/Plugins.meta
+Assets/Plugins/
+Assets/Standard Assets/
+Assets/Standard Assets.meta
+Library/
+Temp/
+*.sln
+obj/
