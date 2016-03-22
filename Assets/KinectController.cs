@@ -29,6 +29,8 @@ public class KinectController : MonoBehaviour
     private Texture2D texture;  // 動的に生成するテクスチャ
     private byte[] textureData; // テクスチャに書き込む色データのバッファ
 
+    public Color32 bodyColor;
+
     // はじめに一度だけ実行　初期化処理
     void Start ()
     {
@@ -146,6 +148,7 @@ public class KinectController : MonoBehaviour
                 int colorY = (int)point.Y;
                 int colorIndex = colorDescription.Width * colorY + colorX;
 
+#if false
                 // 参照可能な範囲内かチェック
                 if(0 <= colorX && colorX < colorDescription.Width
                     && 0 <= colorY && colorY <colorDescription.Height)
@@ -163,6 +166,12 @@ public class KinectController : MonoBehaviour
                     b = 0;
                     a = 255;
                 }
+#else
+                r = bodyColor.r;
+                g = bodyColor.g;
+                b = bodyColor.b;
+                a = bodyColor.a;
+#endif
             }
             else
             {
